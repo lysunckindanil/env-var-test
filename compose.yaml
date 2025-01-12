@@ -1,1 +1,8 @@
 services:
+
+  env-var-test:
+    environment:
+      HELLO_MESSAGE: Hello World!
+    image: docker.io/library/env-var-test:0.0.1-SNAPSHOT
+    ports:
+      - "9000:9000"
