@@ -6,19 +6,19 @@ pipeline {
   }
 
   stages {
-    stage('Stage Test') {
+    stage('Test') {
       steps {
         sh 'mvn clean test -Pprod'
       }
     }
 
-    stage('Stage Build Images') {
+    stage('Build Images') {
       steps {
         sh 'mvn spring-boot:build-image -Pprod'
       }
     }
 
-    stage('Stage Start Docker Containers') {
+    stage('Start Docker Containers') {
       steps {
         sh 'docker-compose down'
         sh 'docker-compose up -d --build'
