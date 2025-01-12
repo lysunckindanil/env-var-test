@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-          HELLO_MESSAGE = 'env.HELLO_MESSAGE'
+          HELLO_MESSAGE = params.HELLO_MESSAGE
   }
 
   stages {
